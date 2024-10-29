@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EnterNameActivity">
-
-    <!--        android:hint="@string/credentials_edittext_hint"-->
 
     <Button
         android:id="@+id/enterNameButton"
@@ -21,7 +18,7 @@
         android:layout_marginTop="397dp"
         android:layout_marginEnd="72dp"
         android:layout_marginBottom="304dp"
-        android:text="@string/credentials_button_text"
+        android:text="@string/name_button_text"
         android:textSize="14sp" />
 
     <EditText
@@ -37,7 +34,7 @@
         android:layout_marginEnd="81dp"
         android:layout_marginBottom="388dp"
         android:ems="10"
-        android:hint="@string/credentials_edittext_hint"
+        android:hint="@string/name_edittext_hint"
         android:inputType="text" />
 
 </RelativeLayout>

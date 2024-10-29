@@ -4,11 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 public class EnterGreetingActivity extends Activity {
     private static final int START_ENTER_NAME_ACTIVITY=1;
@@ -36,10 +34,13 @@ public class EnterGreetingActivity extends Activity {
             case (START_ENTER_NAME_ACTIVITY):
                 if (resultCode == 1 && data!=null){
                     String greeting = data.getStringExtra("GREETING");
-                    String credentials = data.getStringExtra("NAME");
-                    greetingTextView.setText(greeting+" "+ credentials + "!");
+                    String name = data.getStringExtra("NAME");
+                    greetingTextView.setText(concatGreetingAndName(greeting, name));
                 }
                 break;
         }
+    }
+    private String concatGreetingAndName(String greeting, String name){
+        return greeting+ " "+ name + "!";
     }
 }
