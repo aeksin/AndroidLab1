@@ -10,12 +10,13 @@ public class EnterNameActivity extends Activity {
     private EditText enterNameEditText;
     private Button enterNameButton;
     private String greeting;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
-        enterNameEditText = findViewById( R.id.enterNameEditText);
-        enterNameButton = findViewById( R.id.enterNameButton);
+        enterNameEditText = findViewById(R.id.enterNameEditText);
+        enterNameButton = findViewById(R.id.enterNameButton);
         Intent callerIntent = getIntent();
         greeting = callerIntent.getStringExtra("GREETING");
 

@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 
 public class EnterGreetingActivity extends Activity {
-    private static final int START_ENTER_NAME_ACTIVITY=1;
+    private static final int START_ENTER_NAME_ACTIVITY = 1;
     private TextView greetingTextView;
     private EditText greetingEditText;
 
@@ -17,22 +17,23 @@ public class EnterGreetingActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_activity);
-        greetingTextView = findViewById( R.id.greetingTextView);
-        greetingEditText = findViewById( R.id.greetingEditText);
+        greetingTextView = findViewById(R.id.greetingTextView);
+        greetingEditText = findViewById(R.id.greetingEditText);
 
     }
 
-    public void goToNextWindow(View v){
+    public void goToNextWindow(View v) {
         Intent intent = new Intent(EnterGreetingActivity.this, EnterNameActivity.class);
-        intent.putExtra("GREETING",greetingEditText.getText().toString());
+        intent.putExtra("GREETING", greetingEditText.getText().toString());
         startActivityForResult(intent, 1);
     }
+
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode){
+        switch (requestCode) {
             case (START_ENTER_NAME_ACTIVITY):
-                if (resultCode == 1 && data!=null){
+                if (resultCode == 1 && data != null) {
                     String greeting = data.getStringExtra("GREETING");
                     String name = data.getStringExtra("NAME");
                     greetingTextView.setText(concatGreetingAndName(greeting, name));
@@ -40,7 +41,8 @@ public class EnterGreetingActivity extends Activity {
                 break;
         }
     }
-    private String concatGreetingAndName(String greeting, String name){
-        return greeting+ " "+ name + "!";
+
+    private String concatGreetingAndName(String greeting, String name) {
+        return greeting + " " + name + "!";
     }
 }
