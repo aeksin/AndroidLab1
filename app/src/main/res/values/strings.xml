@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidLab1</string>
+    <string name="greeting_edittext_hint">Введите приветствие:</string>
+    <string name="greeting_button_text">Перейти к вводу имени</string>
+    <string name="credentials_edittext_hint">Введите имя:</string>
+    <string name="credentials_button_text">Получить итоговое приветствие</string>
+</resources>
