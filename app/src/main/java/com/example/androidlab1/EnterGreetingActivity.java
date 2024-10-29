@@ -36,7 +36,12 @@ public class EnterGreetingActivity extends Activity {
                 if (resultCode == 1 && data != null) {
                     String greeting = data.getStringExtra("GREETING");
                     String name = data.getStringExtra("NAME");
-                    greetingTextView.setText(concatGreetingAndName(greeting, name));
+                    if (greeting != null && name != null && !greeting.isEmpty() && !name.isEmpty()) {
+                        greetingTextView.setText(concatGreetingAndName(greeting, name));
+                    } else {
+                        greetingTextView.setText("Ошибка: приветствие и имя не должны быть пустыми");
+                    }
+
                 }
                 break;
         }
